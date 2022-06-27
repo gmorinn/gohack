@@ -13,8 +13,8 @@ var (
 )
 
 func init() {
-	flag.StringVar(&_host, "h", "127.0.0.1", "machine is the name of the machine default is 127.0.0.1")
-	flag.IntVar(&_nb_workers, "w", 10, "number of workers (default 10)")
+	flag.StringVar(&_host, "h", "127.0.0.1", "machine is the name of the machine")
+	flag.IntVar(&_nb_workers, "w", 10, "number of workers")
 	flag.Parse()
 }
 
@@ -39,11 +39,10 @@ func worker() {
 
 func main() {
 	// Create a channel to communicate with the workers
-	_channels = make(chan int, _nb_workers)
-
 	if _nb_workers <= 0 {
 		_nb_workers = 10
 	}
+	_channels = make(chan int, _nb_workers)
 
 	// Start the workers
 	for i := 0; i < cap(_channels); i++ {

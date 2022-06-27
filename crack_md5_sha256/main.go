@@ -11,13 +11,13 @@ import (
 )
 
 var (
-	_sha256hash string // "95a5e1547df73abdd4781b6c9e55f3377c15d08884b11738c2727dbd887d4ced"
-	_md5hash    string // "77f62e3524cd583d698d51fa24fdff4f"
+	_sha256hash string // "95a5e1547df7dabdd4781b6c9e55f3377c15d08884b11738c2727dbd887d4ced"
+	_md5hash    string // "77f62e3524cdd83d698d51fa24fdff4f"
 	_wordlist   string
 )
 
 func init() {
-	flag.StringVar(&_wordlist, "w", "wordlist.txt", "wordlist is the name of the file default is wordlist.txt")
+	flag.StringVar(&_wordlist, "w", "wordlist.txt", "wordlist is the name of the file")
 	flag.StringVar(&_sha256hash, "sha256", "", "sha256 hash")
 	flag.StringVar(&_md5hash, "md5", "", "md5 hash")
 	flag.Parse()
